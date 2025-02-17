@@ -35,16 +35,15 @@ class Calculadora:
         
         botao.grid(row=linha, column=coluna, padx=5, pady=5, sticky="nsew")
         
-        # Adiciona a configuração de expandir os botões para preencher o espaço disponível
         self.root.grid_rowconfigure(linha, weight=1)
         self.root.grid_columnconfigure(coluna, weight=1)
     
     def adicionar_entrada(self, valor):
         atual = self.resultado.get()
         if valor == '×':
-            self.resultado.set(atual + '*')  # Substituir '×' por '*'
+            self.resultado.set(atual + '*')  
         elif valor == '÷':
-            self.resultado.set(atual + '/')  # Substituir '÷' por '/'
+            self.resultado.set(atual + '/')  
         else:
             self.resultado.set(atual + valor)
     
@@ -60,6 +59,6 @@ class Calculadora:
 
 if __name__ == "__main__":
     root = tk.Tk()
-    root.geometry("400x600")  # Definindo um tamanho fixo para a janela
+    root.geometry("400x600") 
     app = Calculadora(root)
     root.mainloop()
